@@ -1,16 +1,30 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import ComponentCard from './components/ComponentCard.vue'
+import CardComponent from './components/CardComponent.vue'
+import ButtonComponent from './components/ButtonComponent.vue'
+import ModalComponent from './components/ModalComponent.vue'
+
+import IconDocumentation from './components/icons/IconDocumentation.vue';
+import { ref } from 'vue';
+
+const cardTitle = "Employee Card"
+const cardContent = ['Jonathan Joestar', 'Application Management']
+
+const openModal = ref(false)
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <CardComponent :title="cardTitle" :content="cardContent">
+        <ButtonComponent :@on-click="openModal = true">
+          <a>Details</a>
+          <IconDocumentation></IconDocumentation>
+        </ButtonComponent>
+      </CardComponent>
     </div>
   </header>
+  <ModalComponent></ModalComponent>
 
 </template>
 
