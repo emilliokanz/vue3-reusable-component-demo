@@ -1,33 +1,18 @@
 <script setup>
-import { onMounted, ref } from 'vue'
 
-const props = defineProps({
-    openModal: Boolean
-})
+const emits = defineEmits(['on-close'])
 
-const open = ref(false)
-
-onMounted(() => {
-    open = props.openModal
-})
 </script>
 
 <template>
-  <Teleport to="body">
-  <div v-if="open" class="modal">
-    <slot />
-    <button @click="open = false">Close</button>
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">Hello!</h3>
+    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn" @click="emits('on-close')">Close</button>
+      </form>
+    </div>
   </div>
-</Teleport>
 </template>
-
-<style scoped>
-.modal {
-  position: fixed;
-  z-index: 999;
-  top: 20%;
-  left: 50%;
-  width: 300px;
-  margin-left: -150px;
-}
-</style>

@@ -1,12 +1,12 @@
 <script setup>
 
 const emits = defineEmits([
-    'onClick'
+    'on-click'
 ])
 
 </script>
 <template>
-    <div class="btn" :@click="emits('onClick')">
+    <button class="btn" @click="emits('on-click')">
         <slot />
-    </div>
+    </button>
 </template>

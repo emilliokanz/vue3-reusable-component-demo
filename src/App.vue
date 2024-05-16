@@ -1,58 +1,30 @@
 <script setup>
-import CardComponent from './components/CardComponent.vue'
-import ButtonComponent from './components/ButtonComponent.vue'
-import ModalComponent from './components/ModalComponent.vue'
-
-import IconDocumentation from './components/icons/IconDocumentation.vue';
-import { ref } from 'vue';
-
-const cardTitle = "Employee Card"
-const cardContent = ['Jonathan Joestar', 'Application Management']
-
-const openModal = ref(false)
+import Index from './views/Index.vue'
+import ArticleComponent from './components/ArticleComponent.vue'
 </script>
 
 <template>
-  <header>
-
-    <div class="wrapper">
-      <CardComponent :title="cardTitle" :content="cardContent">
-        <ButtonComponent :@on-click="openModal = true">
-          <a>Details</a>
-          <IconDocumentation></IconDocumentation>
-        </ButtonComponent>
-      </CardComponent>
-    </div>
+  <!-- <Index></Index> -->
+  <header class="text-2xl text-center my-8">
+    Hellow World
   </header>
-  <ModalComponent></ModalComponent>
+  <body>
+    <div>
+      <ArticleComponent />
+      <!-- <div class="card card-bordered bg-slate-200 text-black text-bold">
+        <div class="cart-title text-xl ml-5 mt-5">Article Title</div>
+        <div class="divider primary border-white"></div>
+        <div class="card-body">Article Content</div>
+        <div class="flex justify-end">
+          <div class="btn btn-wide bg-slate-400 me-5 mb-3 text-white">
+            Details
+          </div>
 
+        </div>
+      </div> -->
+    </div>
+  </body>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
