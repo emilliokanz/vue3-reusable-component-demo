@@ -1,6 +1,7 @@
 <script setup>
 import Index from './views/Index.vue'
 import ArticleComponent from './components/ArticleComponent.vue'
+import ToDoList from './components/toDo/ToDoList.vue';
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import ArticleComponent from './components/ArticleComponent.vue'
   </header>
   <body>
     <div>
-      <ArticleComponent />
+      <ToDoList></ToDoList>
+      <!-- <ArticleComponent /> -->
       <!-- <div class="card card-bordered bg-slate-200 text-black text-bold">
         <div class="cart-title text-xl ml-5 mt-5">Article Title</div>
         <div class="divider primary border-white"></div>
